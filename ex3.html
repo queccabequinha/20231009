@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analisador de String</title>
+</head>
+<body>
+    <form id="form">
+        <label for="inputString">Digite uma string:</label>
+        <input type="text" id="inputString" name="inputString">
+        <button type="button" onclick="analisarString()">Analisar</button>
+    </form>
+
+    <table id="result">
+        <tr>
+            <th>Tipo de Caractere</th>
+            <th>Quantidade</th>
+        </tr>
+    </table>
+
+    <script>
+        function analisarString() {
+            
+            const inputString = document.getElementById('inputString').value.toLowerCase();
+
+            
+            let vogais = 0;
+            let consoantes = 0;
+            let digitos = 0;
+            let outros = 0;
+
+            
+            for (let i = 0; i < inputString.length; i++) {
+                const char = inputString[i];
+                if (char.match(/[aeiou]/)) {
+                    vogais++;
+                } else if (char.match(/[a-z]/)) {
+                    consoantes++;
+                } else if (char.match(/[0-9]/)) {
+                    digitos++;
+                } else {
+                    outros++;
+                }
+            }
+
+            
+            const resultTable = document.getElementById('result');
+            resultTable.innerHTML = `
+                <tr>
+                    <td>Vogais</td>
+                    <td>${vogais}</td>
+                </tr>
+                <tr>
+                    <td>Consoantes</td>
+                    <td>${consoantes}</td>
+                </tr>
+                <tr>
+                    <td>Dígitos</td>
+                    <td>${digitos}</td>
+                </tr>
+                <tr>
+                    <td>Outros</td>
+                    <td>${outros}</td>
+                </tr>
+            `;
+        }
+    </script>
+</body>
+</html>
+

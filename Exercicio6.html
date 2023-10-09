@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Referencia Bibliografica</title>
+    <script type="text/javascript">
+    function Biblioteca() {
+    var nome = document.getElementById("nome").value;
+    var partesDoNome = nome.split(" ");
+    var primeiroNome = partesDoNome[0];
+    var sobrenome = partesDoNome[partesDoNome.length - 1].toUpperCase();
+    var iniciais = partesDoNome.slice(1, partesDoNome.length - 1).map(parte => parte.charAt(0).toUpperCase()).join(". ") + ".";
+    var nomeFormatado = "<b>" + sobrenome + "</b>" + ", " + primeiroNome + " " + iniciais;
+    document.getElementById("biblioteca").innerHTML = nomeFormatado;
+}
+
+    </script>
+    <style>
+        .container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form>
+            Nome: <input type="text" id="nome" size="50"><br>
+            <input type="button" value="Formatar Nome" onclick="Biblioteca()">
+        </form>
+        <p id="biblioteca"></p>
+    </div>
+</body>
+</html>

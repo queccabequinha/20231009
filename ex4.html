@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verificador de Palíndromo</title>
+</head>
+<body>
+    <form id="form">
+        <label for="inputString">Digite uma string:</label>
+        <input type="text" id="inputString" name="inputString">
+        <button type="button" onclick="verificarPalindromo()">Verificar Palíndromo</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function verificarPalindromo() {
+            
+            const inputString = document.getElementById('inputString').value.toLowerCase().replace(/\s/g, '');
+
+           
+            const reversedString = inputString.split('').reverse().join('');
+
+            
+            const isPalindromo = inputString === reversedString;
+
+            
+            const resultDiv = document.getElementById('result');
+            if (isPalindromo) {
+                resultDiv.innerHTML = 'A string é um palíndromo.';
+            } else {
+                resultDiv.innerHTML = 'A string não é um palíndromo.';
+            }
+        }
+    </script>
+</body>
+</html>

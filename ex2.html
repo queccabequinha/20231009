@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ex1</title>
+    <script lang="Javascript">
+        function palavra() {
+            var p, v, r
+            p = document.frmDados.txtp.value;
+            v = document.frmDados.txtv.value;
+
+            r = p.repeat(v)
+
+            document.write("<table border='1'>");
+            document.write("<tr>");
+                
+                document.write("<td>");
+                document.write(r);
+                document.write("</td>");
+
+            document.write("</tr>");
+            document.write("</table>");
+   
+                }
+</script>
+</head>
+<body>
+
+    <form name="frmDados">
+    Escreva uma letra: <br><input type="text" name="txtp" ><br>
+    Quantas vezes? <br><input type="text" name="txtv" ><br>
+    </form>
+    <input type="button" value="enviar" onclick="palavra();">
+    <input type="reset" value="Limpar"><br>
+
+</body>
+</html>

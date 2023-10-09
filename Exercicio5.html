@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Catalogo telefonico</title>
+    <script lang="JavaScript">
+        function telefone()
+        {
+            var nomeCompleto = form.nome.value;
+            var nomeSeparado = nomeCompleto.split(" ");
+            var sobrenome = nomeSeparado.pop();
+            var nome = nomeSeparado.join(" ");
+            var nomeFormatado = sobrenome + ", " + nome;
+            document.getElementById("telefone").innerHTML = nomeFormatado;
+
+        }
+    </script>
+        <style>
+
+        .container {
+            text-align: center;
+        }
+    </style>
+       
+</head>
+    <body>
+    <div class="container">
+       <form name="form">
+        Nome: <input type="text" name="nome" size="50"><br>
+        <input type="button" value="Iniciar" name="btnVai" onclick="telefone();">
+       </form>
+       <p id="telefone"></p>
+    </div>
+    </body>
+
+
+
+</html>

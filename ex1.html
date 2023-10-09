@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ex1</title>
+    <script lang="Javascript">
+        function palavra() {
+            var p
+            p = document.frmDados.txtp.value;
+
+            document.write("<table border='1'>");
+            document.write("<tr>");
+
+            for (var i = 0; i < p.length; i++) {
+                
+                document.write("<td>");
+                document.write(p.charAt(i));
+                document.write("</td>");
+                
+            }
+
+            document.write("</tr>");
+            document.write("</table>");
+
+            document.write("<table border='1'>");
+            
+
+            for (var i = 0; i < p.length; i++) {
+                document.write("<tr>");
+                document.write("<td>");
+                document.write(p.charAt(i));
+                document.write("</td>");
+                document.write("</tr>");
+            }
+
+            
+            document.write("</table>");
+  }
+   
+    
+</script>
+</head>
+<body>
+
+    <form name="frmDados">
+    Escreva uma palavra: <br><input type="text" name="txtp" value=""><br>
+    </form>
+    <input type="button" value="enviar" onclick="palavra();">
+    <input type="reset" value="Limpar"><br>
+
+</body>
+</html>
